@@ -1,0 +1,954 @@
+import java.lang.Math;
+
+import java.util.*;                                         // importamos esta clase para utilizar el scanner que permite la entrada de datos desde el
+
+
+
+public class Calculator{                                    // teclado ya que hayq ue seleccionar una opcion en el menu y hay que hacer algo con ese dato
+
+
+
+     public static void main(String [] args) {   
+
+         
+
+		 Operaciones op = new Operaciones(9,4,2);           // creo un objeto de la clase oparaciones llamado op y le inserto 3 parametros
+
+	     Scanner scan = new Scanner(System.in);             // para las variables declaradas (a,b,c). creamos un scanner para la entrada
+
+	     
+
+		 int ciclo=2;
+
+   
+
+     do{  
+
+	     System.out.println ("-------------------------------------------------------");
+
+		 System.out.println ("\n Que operacion quiere hacer?   \t \n");        // se muestra un msj de lo que se quiere hacer
+
+   		 System.out.print   ("1) suma \t\t ");    				               // se elige una opcion
+
+         System.out.println ("2) resta \t ");
+
+		 System.out.print   ("3) Multiplicacion  ||\t ");
+
+		 System.out.println ("4) Division \t ");
+
+		 System.out.print   ("5) Modulo \t\t ");
+
+		 System.out.println ("6) Potencia        ||\t ");
+
+		 System.out.print   ("7) Raiz \t\t ");
+
+		 System.out.println ("8) Factorial \t ");
+
+		 System.out.print   ("9) Limite          ||\t ");
+
+		 System.out.println ("10)Formula Gral ");
+
+		 System.out.print   ("11)Numero mayor \t ");
+
+		 System.out.println ("12)Promedio \t ");
+
+		 System.out.print   ("13)Num aleatorio \t ");
+
+		 System.out.println ("14)Logaritmo \t ");
+
+		 System.out.print   ("15)Valor Absoluto \t ");
+
+		 System.out.println ("16)Seno \t ");
+
+		 System.out.print   ("17)Coseno \t\t ");
+
+		 System.out.println ("18)Tangente \t ");
+
+		 System.out.println ("                   ||\n ");
+
+		 System.out.println ("-------------------------------------------------------");
+
+		 
+
+		 String stg = scan.nextLine();     					// esto es para escanear lo que usted inserto desde el teclado y guardarlo en una
+
+         int entrada = Integer.parseInt(stg);  				// variable String, luego lo convieto en un int con este paso. lo guardo en una variable 
+
+                                      
+
+
+
+         switch (entrada){                      			// creo un switch para ir llamando los metodos de las oparaciones
+
+             
+
+			 case 1: 
+
+                 System.out.print ("La Suma de ");          // aqui llamo las variables y metodos
+
+                 System.out.print (op.a);
+
+			     System.out.print (" y ");
+
+				 System.out.print (op.b);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getSuma());
+
+				 System.out.println (" \n");
+
+			 break;      									 // esto es para inmediatamente haga esta tarea salga del switch y continue con lo que esta fuera de este
+
+
+
+             
+
+			 case 2:
+
+                 System.out.print ("La Resta de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" y ");
+
+				 System.out.print (op.b);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getResta());
+
+				 System.out.println (" \n");
+
+			 break;
+
+
+
+             
+
+			 case 3:
+
+                 System.out.print ("La Multiplicacion de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" y ");
+
+				 System.out.print (op.b);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getMultiplicacion());
+
+				 System.out.println (" \n");
+
+				 break;
+
+
+
+             
+
+			 case 4:
+
+                 System.out.print ("La Division de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" y ");
+
+				 System.out.print (op.b);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getDivision());
+
+				 System.out.println (" \n");
+
+			 break;
+
+
+
+             
+
+			 case 5:
+
+                 System.out.print ("El Modulo de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" entre ");
+
+				 System.out.print (op.b);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getModulo());
+
+				 System.out.println (" \n");
+
+				break;
+
+
+
+             
+
+			 case 6:
+
+                 System.out.print ("La Potencia de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" elevado a ");
+
+				 System.out.print (op.potencia);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getPotencia());
+
+				 System.out.println (" \n");
+
+			 break;
+
+
+
+             
+
+			 case 7:
+
+                 System.out.print ("La Raiz de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getRaiz());
+
+				 System.out.println (" \n");
+
+			 break;
+
+
+
+             
+
+			 case 8:
+
+                 System.out.print ("El Factorial de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getFactorial());
+
+				 System.out.println (" \n");
+
+			 break;
+
+
+
+             
+
+			 case 9:
+
+                 System.out.print ("El Limite de ");
+
+                 System.out.print (op.lim);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getLimite());
+
+				 System.out.println (" \n");
+
+			 break;
+
+
+
+             
+
+			 case 10:
+
+                 System.out.print ("La formula general ");
+
+                 System.out.print (op.formGral);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getFormGralP());
+
+				 System.out.println (" \n");
+
+			 break;
+
+			 
+
+			 case 11:
+
+                 System.out.print ("El numero mayor entre ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" y ");
+
+				 System.out.print (op.b);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.println (op.getNumMayor());
+
+			 break;
+
+
+
+             
+
+			 case 12:
+
+                 System.out.print ("El Promedio de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (", ");
+
+				 System.out.print (op.b);
+
+				 System.out.print (" y ");
+
+				 System.out.print (op.c);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getPromedio());
+
+				 System.out.println (" \n");
+
+			 break;
+
+			 
+
+			 case 13:
+
+			     System.out.print ("Un numero aleatorio entre ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" y ");
+
+				 System.out.print (op.b);
+
+				 System.out.print (" es igual a ");
+
+                 System.out.print (op.getAleatorio());
+
+			 break;
+
+				 
+
+			 case 14:
+
+			     System.out.print ("El Logaritmo de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getLog());
+
+				 break;
+
+				 
+
+			 case 15:
+
+			     System.out.print ("El Valor Absoluto de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getValAbs());
+
+				 break;
+
+				 
+
+			 case 16:
+
+			     System.out.print ("El Seno de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getSin());
+
+				 break;
+
+				
+
+             case 17:
+
+			     System.out.print ("El Coseno de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getCos());
+
+			 break;
+
+				 
+
+			 case 18:
+
+			     System.out.print ("La Tangente de ");
+
+                 System.out.print (op.a);
+
+				 System.out.print (" es igual a ");
+
+				 System.out.print (op.getTan());
+
+			 break;
+
+			
+
+			 default:
+
+				
+
+				 ciclo = 1;
+
+                 System.out.println ("No es una opcion valida!!! ");
+
+				 System.out.println (" \n");
+
+         }
+
+
+
+     } while (ciclo == 2);
+
+     }
+
+}
+
+
+import java.lang.Math;
+
+
+
+public class Operaciones{                                  	// aqui declaro la clase oparaciones donde desarrollare los metodos de las operaciones
+
+     int a;                        							// declaro 3 variables las cuales ire utilizando durante el programa
+
+     int b;
+
+     int c;
+
+	 int potencia = 2; 
+
+     String lim = "x+7 cuando x tiende a 6 ";
+
+     String formGral = ("3x^2 + 2x + 3");
+
+
+
+          
+
+		  public Operaciones(int a, int b, int c) {       	// creo un constructor para las variables
+
+             this.a = a;
+
+             this.b = b;
+
+             this.c = c;
+
+		 }
+
+ 
+
+				 
+
+				 public int getSuma(){         				// creo el metodo getSuma el cual me sumara 2 numeros
+
+					 int suma; 
+
+		 
+
+						 suma = a+b;
+
+			 
+
+                 return suma;                  				// me devuelve la suma de a+b y la almacena en la variable suma
+
+                 }
+
+	
+
+				 
+
+				 
+
+				 
+
+				 public int getResta(){        				// metodo resta
+
+				     int resta;
+
+		 
+
+                         resta = a-b;
+
+			 
+
+                 return resta;
+
+                 }
+
+  
+
+                 
+
+				 
+
+				 
+
+				 public int getMultiplicacion(){  			// metodo multiplicacion
+
+                     int multiplicacion;
+
+		 
+
+                         multiplicacion = a * b;
+
+			 
+
+                 return multiplicacion;
+
+                 }
+
+				 
+
+  
+
+                 
+
+				 
+
+				 public double getDivision(){
+
+                     double division;
+
+		 
+
+                         division = a/b;
+
+			 
+
+                 return division;
+
+                 }
+
+ 
+
+ 
+
+                 
+
+				 
+
+				 public int getModulo(){       				// el modulo es el que divide 2 numeros y muestra el residuo 
+
+                     int modulo;
+
+		 
+
+                         modulo = a%b;                  	// se representa por el simbolo %
+
+     
+
+	             return modulo;
+
+                 }
+
+ 
+
+ 
+
+                 
+
+				 
+
+				 public double getPotencia(){
+
+                      //int potencia = 2;                	// aqui declaro una variable int potencia la cual le doy un valor de 2.
+
+                     int cont = potencia;             		// declaro un contador el cual le doy el mismo valor de la potencia
+
+             
+
+			             while (cont > 1){                	// aqui nos muestra que mientras el contador que es igual a 2 sea mayor que 1
+
+                             potencia = a*a;                // que multiplique la variable a por si misma hasta que cont sea menor igual a 1
+
+                             cont--;                        // mientras se multiplica a por si misma el contador va disminuyendo en 1
+
+                         }
+
+     
+
+	             return potencia;                  			// quiere decir que me devuelva el valor de la variable potencia
+
+                 }
+
+				 
+
+				 
+
+				 
+
+				 
+
+				 public double getRaiz(){
+
+				     double raiz;
+
+				         
+
+						 raiz = Math.sqrt(a);
+
+				     
+
+				 return raiz;
+
+				 }		 
+
+ 
+
+                 // Este metodo a continuacion no me funciono correctamente como queria
+
+				 
+
+				 //public double getRaiz(){  
+
+				
+
+				  
+
+                     //double raiz = 0; 
+
+					              				            // declaro una variable tipo double llamada raiz y le doy un valor de 0
+
+             
+
+			            // while (raiz*raiz <= a){           	// mientras raiz por raiz o raiz al cuadrado sea menor o igual que a haz lo sigte
+
+                            // raiz += 0.0001;
+
+					
+
+                             							 // raiz sera igual a ella misma mas 0.1 y el resultado se guarde en variable raiz
+
+                         //}                                  // asi el programa ira analizando cuales 2 numeros multiplicados por si mismos
+
+			
+
+	             //return raiz;                     		    // dan como resultado la variable a.
+
+                 //}
+
+ 
+
+                 
+
+				 
+
+				 public double getFactorial(){    			// para obtener el factorial de un numero, el factorial es la multipicacion de ese
+
+                     int factorial = 1;              		// numero en un intervalo de 1 a ese numero menos 1... ej 5 = 5*4*3*2*1.
+
+             
+
+			             while ( a!=0) {                    // declaramos la variable y mientras el numero a evaluar sea diferente de 0
+
+                             factorial = factorial * a;     // la variable factorial sera igual a la multiplicacion de ella por el numero
+
+                             a--;                           // que se esta evaluando, el numero se ira disminuyendo en 1.
+
+                         }
+
+     
+
+	             return factorial;
+
+                 }
+
+ 
+
+                 
+
+				 
+
+				 
+
+				 public int getLimite(){         
+
+                     int limite;
+
+                     //String lim = "x+7 cuando x tiende a 6 ";
+
+                     int x = 6;                         		//declaramos a x y le damos un valor de 6 al cual tiende x
+
+             
+
+			             limite = x+7;                     	    // esta es la formula del limite escogida y luego se sustituye la x por su valor
+
+     
+
+	             return limite;                    			    //luego se suma y retorna variable limite
+
+                 }
+
+				 
+
+ 
+
+                 
+
+				 
+
+				 public String getFormGralP(){      			// esta es la formula general, se toman 3 parametros cuyos valores estan en 
+
+                     String formGral;                  				  
+
+                     float formGral1;
+
+		             float formGral2;
+
+		             int menosB;
+
+                     int bCuadrado;                   			
+
+                     int acPor4;                   				
+
+                     int numerador;
+
+		             int denominador;
+
+		             float raiz = 0;
+
+             
+
+			             menosB = ((-1) * (b));                 
+
+                         bCuadrado = b * b;         		   
+
+                         acPor4 = (4) * (a) * (c);
+
+                         numerador = bCuadrado - acPor4;
+
+			 
+
+			                 while (raiz * raiz <= numerador){  
+
+                                 raiz += 0.1;                   
+
+                             }                                  
+
+ 
+
+                         denominador = 2 * a;                			
+
+                         formGral1 = (menosB + raiz) / denominador;  	
+
+                         formGral2 = (menosB - raiz) / denominador;
+
+	                     formGral = (formGral1+ " y " +formGral2);
+
+	 
+
+	             return formGral;                       		
+
+                 }  
+
+				 
+
+															    
+
+ 
+
+                 
+
+				 public int getNumMayor(){
+
+                     int numMayor;
+
+					 
+
+					     numMayor = Math.max(a,b);
+
+						 
+
+				 return numMayor;
+
+                  }  
+
+				  
+
+ 
+
+                 
+
+				 
+
+				 public double getPromedio(){ 
+
+                     float promedio;
+
+		 
+
+                         promedio = a + b + c;
+
+                         promedio = promedio/3;
+
+			 
+
+                 return promedio;
+
+				 }
+
+				 
+
+				 
+
+				 
+
+				 
+
+				 public double getAleatorio(){
+
+				     double aleatorio;
+
+					 
+
+					     aleatorio = Math.random()*a+b;
+
+						 aleatorio = (int)aleatorio;
+
+						 
+
+				return aleatorio;
+
+				 }
+
+				 
+
+				 
+
+				 
+
+				 
+
+				 public double getLog(){ 
+
+                     double log;
+
+		 
+
+                         log = Math.log(b);
+
+			 
+
+                 return log;
+
+				 }
+
+				 
+
+				 
+
+				 
+
+				 
+
+				 public double getValAbs(){ 
+
+                     double valAbs;
+
+		 
+
+                         valAbs = Math.abs(-b);
+
+			 
+
+                 return valAbs;
+
+				 }
+
+				 
+
+				 
+
+				 
+
+				 public double getSin(){ 
+
+                     double sin;
+
+		 
+
+                         sin = Math.sin(b);
+
+			 
+
+                 return sin;
+
+				 }
+
+				 
+
+				 
+
+				 
+
+				 public double getCos(){ 
+
+                     double cos;
+
+		 
+
+                         cos = Math.cos(b);
+
+			 
+
+                 return cos;
+
+				 }
+
+				 
+
+				 
+
+				 
+
+				  public double getTan(){ 
+
+                     double tan;
+
+		 
+
+                         tan = Math.tan(b);
+
+			 
+
+                 return tan;
+
+				 }
+
+				 
+
+     }           
